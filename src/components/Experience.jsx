@@ -10,7 +10,7 @@ const experiences = [
     duration: "Present (2026)",
     description: [
       "Developing, executing, and training deep algorithmic systems focused on desktop workflows and automated pipelines.",
-      "Working on Natural Language Processing (NLP) execution tasks, intent evaluation, and standalone automation frameworks."
+      "Working on execution tasks, intent evaluation, and standalone automation frameworks."
     ],
     color: "from-[#64ffda] to-[#00c6fb]"
   },
@@ -18,7 +18,7 @@ const experiences = [
     role: "Full Stack Developer (Contract Based)",
     company: "Rech International",
     location: "Karachi, Pakistan",
-    duration: "2024",
+    duration: "2026",
     description: [
       "Engineered and executed complete system migration from legacy distributed Google Sheets infrastructures over to high-volume MySQL databases.",
       "Maintained intact runtime frontend architecture dependencies while successfully rerouting underlying API networks to point to the newly implemented production SQL backend layer.",

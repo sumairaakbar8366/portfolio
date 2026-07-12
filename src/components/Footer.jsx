@@ -12,7 +12,7 @@ function Footer() {
         {/* Branding Layer */}
         <div className="space-y-1">
           <p className="text-sm font-semibold tracking-wide bg-gradient-to-r from-white to-[#64ffda] bg-clip-text text-transparent">
-            Designed & Developed by Sumaira Akbar[cite: 1]
+            Designed & Developed by Sumaira Akbar
           </p>
           <p className="text-[11px] font-mono text-slate-500">
             &copy; {currentYear} // Quantum Ecosystem Core. All Rights Reserved.
