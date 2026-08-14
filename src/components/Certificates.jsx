@@ -33,7 +33,7 @@ const certificates = [
     status: "Certified",
     fileLink: "/navttccertificate.pdf",
     desc: "Completed comprehensive training covering network scaling, virtualization frameworks, and core server systems.",
-    icon: <FiClock className="text-[#64ffda]" />
+    icon: <FiCheckCircle className="text-[#64ffda]" />
   }
 ];
 
