@@ -30,10 +30,10 @@ const certificates = [
   {
     title: "System Administration and IT Infrastructure",
     issuer: "National Vocational & Technical Training Commission (NAVTTC)",
-    status: "Coming Soon",
-    fileLink: null,
+    status: "Certified",
+    fileLink: "/navttccertificate.pdf",
     desc: "Completed comprehensive training covering network scaling, virtualization frameworks, and core server systems.",
-    icon: <FiClock className="text-amber-400 animate-pulse" />
+    icon: <FiClock className="text-[#64ffda]" />
   }
 ];
 
