@@ -34,9 +34,18 @@ const certificates = [
     fileLink: "/navttccertificate.pdf",
     desc: "Completed comprehensive training covering network scaling, virtualization frameworks, and core server systems.",
     icon: <FiCheckCircle className="text-[#64ffda]" />
-  }
-];
+  },
 
+  {
+  title: "AI & IT Intern",
+  issuer: "Pakistan Ordnance Factories (POF)",
+  status: "Certified",
+  fileLink: "/pofcertificate.pdf", 
+  desc: "Completed hands-on internship focusing on intent evaluation models, workflow execution frameworks, and automated process systems.",
+  icon: <FiCheckCircle className="text-[#64ffda]" />
+}
+
+];
 function Certificates() {
   return (
     <section id="certificates" className="py-24 relative overflow-hidden perspective-2000">

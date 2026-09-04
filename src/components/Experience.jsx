@@ -7,10 +7,10 @@ const experiences = [
     role: "AI Intern",
     company: "Pakistan Ordnance Factories (POF)",
     location: "Wah Cantt, Pakistan",
-    duration: "Present (2026)",
+    duration: "09-07-2026 to 19-08-2026",
     description: [
-      "Developing, executing, and training deep algorithmic systems focused on desktop workflows and automated pipelines.",
-      "Working on execution tasks, intent evaluation, and standalone automation frameworks."
+      "Developed, executed, and trained deep algorithmic systems focused on desktop workflows and automated pipelines.",
+    "Worked on execution tasks, intent evaluation, and standalone automation frameworks."
     ],
     color: "from-[#64ffda] to-[#00c6fb]"
   },
