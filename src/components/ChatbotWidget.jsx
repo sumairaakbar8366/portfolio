@@ -36,23 +36,23 @@ function ChatbotWidget() {
       let botText = "I can guide you anywhere on this portfolio! Try asking about her current job, graduation, project details, or technical certificates.";
       
       if (userQuery.includes('about') || userQuery.includes('who is') || userQuery.includes('introduction') || userQuery.includes('intro') || userQuery.includes('sumaira')) {
-        botText = "Sumaira Akbar is a BS Computer Science graduate from Iqra University[cite: 1]. Let me scroll you straight to her main introduction section!";
+        botText = "Sumaira Akbar is a BS Computer Science graduate from Iqra University. Let me scroll you straight to her main introduction section!";
         scrollToSection('hero');
       } 
       else if (userQuery.includes('intern') || userQuery.includes('pof') || userQuery.includes('erp') || userQuery.includes('a net') || userQuery.includes('current') || userQuery.includes('experience') || userQuery.includes('job') || userQuery.includes('work') || userQuery.includes('snj')) {
-        botText = "Sumaira is currently working as a Full Stack Developer at A Net Cyber Solutions (since 23 Sep 2026), building full ERP projects! Previously, she was an AI Intern at POF (Pakistan Ordnance Factories), did a contract job and an internship at SNJ Global Services[cite: 1]. Let's check her profile summary.";
+        botText = "Sumaira is currently working as a Full Stack Developer at A Net Cyber Solutions (since 23 Sep 2026), building full ERP projects! Previously, she was an AI Intern at POF (Pakistan Ordnance Factories), did a contract job and an internship at SNJ Global Services. Let's check her profile summary.";
         scrollToSection('hero');
       }
       else if (userQuery.includes('project') || userQuery.includes('deskbot') || userQuery.includes('app') || userQuery.includes('code') || userQuery.includes('mitm') || userQuery.includes('react')) {
-        botText = "Right here! Sumaira developed DeskBot (Voice Assistant)[cite: 1], a React Web Portal[cite: 1], and a Network Security MITM Simulation[cite: 1]. Moving you to the projects grid.";
+        botText = "Right here! Sumaira developed DeskBot (Voice Assistant), a React Web Portal, and a Network Security MITM Simulation. Moving you to the projects grid.";
         scrollToSection('projects');
       } 
       else if (userQuery.includes('navttc') || userQuery.includes('course') || userQuery.includes('certif') || userQuery.includes('skills') || userQuery.includes('hec') || userQuery.includes('pearls')) {
-        botText = "She has completed her NAVTTC System Administration training[cite: 1] and holds API/Postman certificates from 10 Pearls University[cite: 1]. Directing you to the Certificates module.";
+        botText = "She has completed her NAVTTC System Administration training and holds API/Postman certificates from 10 Pearls University. Directing you to the Certificates module.";
         scrollToSection('certificates');
       }
       else if (userQuery.includes('study') || userQuery.includes('education') || userQuery.includes('degree') || userQuery.includes('university') || userQuery.includes('iqra')) {
-        botText = "Sumaira holds a Bachelor of Science in Computer Science (BSCS) from Iqra University, Karachi[cite: 1]. Scrolling to her academic section.";
+        botText = "Sumaira holds a Bachelor of Science in Computer Science (BSCS) from Iqra University, Karachi. Scrolling to her academic section.";
         scrollToSection('hero');
       }
       else if (userQuery.includes('army') || userQuery.includes('major') || userQuery.includes('father') || userQuery.includes('abba')) {
