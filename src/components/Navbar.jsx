@@ -48,7 +48,7 @@ function Navbar() {
             <SiCentos className="text-[#070d19] text-2xl animate-pulse" />
           </div>
           <span className="text-xl font-bold tracking-wider bg-gradient-to-r from-white via-[#e2e8f0] to-[#64ffda] bg-clip-text text-transparent">
-            SA.<span className="text-[#64ffda]">AI</span>
+            SA
           </span>
         </Link>
 

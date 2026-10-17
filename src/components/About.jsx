@@ -43,7 +43,7 @@ function About() {
             </div>
             <h3 className="text-xl font-bold mb-4 text-white">Career Objective</h3>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Passionate AI Engineer highly focused on developing innovative framework architectures across Artificial Intelligence, Natural Language Processing (NLP), Desktop Automation, and highly specialized Python Development environments.
+              Full Stack Developer with hands-on experience building, deploying, and maintaining production-ready web applications and ERP systems end to end, from responsive frontends and RESTful APIs to relational database design, Linux (Ubuntu) VM/VPS server setup, domain &amp; DNS configuration, and SSL. Also skilled in AI/ML, NLP, and automation with Python.
             </p>
           </motion.div>
 

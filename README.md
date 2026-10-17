@@ -29,7 +29,7 @@ This project was developed using a modern, fast, and optimized frontend ecosyste
 ## 🌟 Showcased Modules & Experience
 
 The application is structured into modular sections mapped to my technical timeline:
-*   **Hero & About:** Introduction as a BSCS Graduate from Iqra University and an overview of my current internship at POF.
+*   **Hero & About:** Introduction as a BSCS Graduate from Iqra University and an overview of my current role as a Full Stack Developer at A Net Cyber Solutions, building full ERP projects.
 *   **Experience Timeline:** Showcases my transition from technical contracts to enterprise-level internships.
 *   **Projects Matrix:** Detailed grid highlighting key software engineering benchmarks:
     *   *DeskBot (Voice Assistant Application)*

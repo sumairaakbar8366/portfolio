@@ -4,6 +4,19 @@ import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
 
 const experiences = [
   {
+    role: "Full Stack Developer",
+    company: "A Net Cyber Solutions",
+    location: "Pakistan",
+    duration: "23-09-2026 to Present",
+    description: [
+      "Building complete end-to-end ERP projects, covering both frontend interfaces and backend services.",
+      "Designing normalized database schemas, RESTful APIs, authentication & role-based access control, and business modules for core enterprise operations.",
+      "Deploying and maintaining applications on Linux (Ubuntu) VMs/VPS with Nginx, PM2, domain & DNS configuration, and SSL/HTTPS certificates.",
+      "Handling database administration, backups, performance tuning, and production troubleshooting across the full software development life cycle (SDLC)."
+    ],
+    color: "from-[#64ffda] to-[#00c6fb]"
+  },
+  {
     role: "AI Intern",
     company: "Pakistan Ordnance Factories (POF)",
     location: "Wah Cantt, Pakistan",

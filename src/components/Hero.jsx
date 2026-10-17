@@ -15,7 +15,7 @@ function Hero() {
           transition={{ duration: 0.5 }}
           className="text-sm font-mono text-[#64ffda] tracking-widest uppercase"
         >
-           HELLOW WORLD, I AM
+           SALUTATIONS, ALLOW ME TO INTRODUCE MYSELF
         </motion.p>
 
         <motion.h1 
@@ -35,6 +35,9 @@ function Hero() {
         >
           <ReactTyped
             strings={[
+              "Full Stack Developer.",
+              "ERP & Web App Builder.",
+              "Linux Server & Deployment Specialist.",
               "Python Developer Engine.",
               "AI & Automated Framework Designer.",
               "Full Stack Code Craftsman."

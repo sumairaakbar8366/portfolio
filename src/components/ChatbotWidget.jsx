@@ -4,7 +4,7 @@ import { FiX, FiSend, FiCpu } from 'react-icons/fi';
 function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { sender: 'bot', text: "Hi! I am Sumaira's AI Assistant. Ask me to show you her introduction, current job at POF, graduation info, or certificates, and I will take you there instantly!" }
+    { sender: 'bot', text: "Hi! I am Sumaira's AI Assistant. Ask me to show you her introduction, current job at A Net Cyber Solutions, graduation info, or certificates, and I will take you there instantly!" }
   ]);
   const [input, setInput] = useState('');
   const chatEndRef = useRef(null);
@@ -33,14 +33,14 @@ function ChatbotWidget() {
     setInput('');
 
     setTimeout(() => {
-      let botText = "I can guide you anywhere on this portfolio! Try asking about her current internship, graduation, project details, or technical certificates.";
+      let botText = "I can guide you anywhere on this portfolio! Try asking about her current job, graduation, project details, or technical certificates.";
       
       if (userQuery.includes('about') || userQuery.includes('who is') || userQuery.includes('introduction') || userQuery.includes('intro') || userQuery.includes('sumaira')) {
         botText = "Sumaira Akbar is a BS Computer Science graduate from Iqra University[cite: 1]. Let me scroll you straight to her main introduction section!";
         scrollToSection('hero');
       } 
-      else if (userQuery.includes('intern') || userQuery.includes('pof') || userQuery.includes('current') || userQuery.includes('experience') || userQuery.includes('job') || userQuery.includes('work') || userQuery.includes('snj')) {
-        botText = "Sumaira is currently working as an AI Intern at POF (Pakistan Ordnance Factories)! Previously, she did a contract job and an internship at SNJ Global Services[cite: 1]. Let's check her profile summary.";
+      else if (userQuery.includes('intern') || userQuery.includes('pof') || userQuery.includes('erp') || userQuery.includes('a net') || userQuery.includes('current') || userQuery.includes('experience') || userQuery.includes('job') || userQuery.includes('work') || userQuery.includes('snj')) {
+        botText = "Sumaira is currently working as a Full Stack Developer at A Net Cyber Solutions (since 23 Sep 2026), building full ERP projects! Previously, she was an AI Intern at POF (Pakistan Ordnance Factories), did a contract job and an internship at SNJ Global Services[cite: 1]. Let's check her profile summary.";
         scrollToSection('hero');
       }
       else if (userQuery.includes('project') || userQuery.includes('deskbot') || userQuery.includes('app') || userQuery.includes('code') || userQuery.includes('mitm') || userQuery.includes('react')) {
@@ -139,7 +139,7 @@ function ChatbotWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask to see certificates, current internship..."
+              placeholder="Ask to see certificates, current job..."
               className="flex-1 bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#64ffda]/40"
             />
             <button type="submit" className="w-9 h-9 rounded-xl bg-gradient-to-r from-[#00c6fb] to-[#64ffda] text-slate-950 flex items-center justify-center font-bold shadow-md hover:scale-105 transition-all">
