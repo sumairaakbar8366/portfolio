@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiCpu, FiTerminal, FiDatabase, FiCheckCircle, FiCode, FiLayers, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
@@ -11,6 +11,44 @@ import imgFeedbackDone from '../assets/feedbackdone.jpeg';
 import imgRating from '../assets/rating.jpeg';
 import imgRegComp from '../assets/regcomp.jpeg';
 import imgThemes from '../assets/systemthemes.jpeg';
+
+// Only downloads the video once it scrolls near the screen, and pauses it when off-screen
+function LazyVideo({ src }) {
+  const videoRef = useRef(null);
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLoad(true);
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={load ? src : undefined}
+      poster="/deskbotteaser-poster.jpg"
+      preload="none"
+      controls
+      muted
+      loop
+      playsInline
+      className="w-full h-full object-cover"
+    />
+  );
+}
 
 function Projects() {
   // Mobile UI Slider State
@@ -123,7 +161,7 @@ function Projects() {
           </div>
           <div className="lg:col-span-6">
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(var(--accent2-rgb),0.15)] bg-slate-950 aspect-video">
-              <video src="/deskbotteaser.mp4" controls autoPlay muted loop playsInline className="w-full h-full object-cover" />
+              <LazyVideo src="/deskbotteaser.mp4" />
             </div>
           </div>
         </motion.div>

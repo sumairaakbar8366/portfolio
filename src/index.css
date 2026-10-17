@@ -200,6 +200,21 @@ body {
   }
 }
 
+/* Phones: drop the GPU-heavy effects (huge blurred animated blobs, strong backdrop blur) */
+@media (max-width: 768px) {
+  .aurora-bg {
+    display: none;
+  }
+  .glass-card {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: border-color 0.3s ease;
+  }
+  .glass-card::before {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .aurora-blob {
     animation: none;
