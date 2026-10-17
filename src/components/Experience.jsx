@@ -45,9 +45,9 @@ const experiences = [
     location: "Karachi, Pakistan",
     duration: "March 2024 - Sep 2024",
     description: [
-      "Developed and debugged complex software modules, collaborating with cross-functional development teams[cite: 1].",
-      "Gained robust hands-on programming experience and deepened practical implementation skills across codebase architectures[cite: 1].",
-      "Participated actively in testing and troubleshooting systems to identify layout bugs and data-flow constraints[cite: 1]."
+      "Developed and debugged complex software modules, collaborating with cross-functional development teams.",
+      "Gained robust hands-on programming experience and deepened practical implementation skills across codebase architectures.",
+      "Participated actively in testing and troubleshooting systems to identify layout bugs and data-flow constraints."
     ],
     color: "from-surface to-transparent"
   }
