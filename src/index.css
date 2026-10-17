@@ -1,6 +1,94 @@
 @import "tailwindcss";
 
-/* Custom 3D Layering & Ultra Sleek Glassmorphism Engine */
+/* Theme tokens exposed to Tailwind (bg-page, text-accent, from-accent2, text-on-accent ...) */
+@theme inline {
+  --color-page: var(--page);
+  --color-page-deep: var(--page-deep);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-accent2: var(--accent-2);
+  --color-on-accent: var(--on-accent);
+}
+
+/* ---------- Dark theme (default): dusky greyish blue ---------- */
+:root {
+  color-scheme: dark;
+  --page: #1b2230;
+  --page-deep: #151b26;
+  --surface: #2c3848;
+  --accent: #a3b8d0;
+  --accent-2: #7290b3;
+  --accent-rgb: 163, 184, 208;
+  --accent2-rgb: 114, 144, 179;
+  --on-accent: #121822;
+  --text: #dbe3ec;
+  --text-strong: #f1f5f9;
+
+  /* Mirror / glass surfaces */
+  --glass-top: rgba(255, 255, 255, 0.09);
+  --glass-bottom: rgba(255, 255, 255, 0.02);
+  --glass-tint: rgba(114, 144, 179, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.18);
+  --glass-sheen: rgba(255, 255, 255, 0.07);
+  --glass-shadow: 0 20px 40px rgba(5, 10, 20, 0.35);
+
+  /* Background picture layer */
+  --bg-img-opacity: 0.32;
+  --bg-img-filter: grayscale(35%) saturate(75%) brightness(0.8);
+  --bg-fade: linear-gradient(180deg, rgba(27, 34, 48, 0.35) 0%, rgba(27, 34, 48, 0.75) 55%, rgba(27, 34, 48, 0.92) 100%);
+  --aurora-opacity: 0.35;
+  --aurora-blend: plus-lighter;
+}
+
+/* ---------- Light theme: soft greyish blue, no heavy darkness ---------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #e6ecf2;
+  --page-deep: #dce3eb;
+  --surface: #c6d2df;
+  --accent: #46658a;
+  --accent-2: #5b7898;
+  --accent-rgb: 70, 101, 138;
+  --accent2-rgb: 91, 120, 152;
+  --on-accent: #f7f9fc;
+  --text: #2b3a4e;
+  --text-strong: #1a2433;
+
+  --glass-top: rgba(255, 255, 255, 0.78);
+  --glass-bottom: rgba(255, 255, 255, 0.45);
+  --glass-tint: rgba(91, 120, 152, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-highlight: rgba(255, 255, 255, 1);
+  --glass-sheen: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 12px 32px rgba(52, 72, 100, 0.12);
+
+  --bg-img-opacity: 0.22;
+  --bg-img-filter: grayscale(45%) saturate(70%) brightness(1.1);
+  --bg-fade: linear-gradient(180deg, rgba(230, 236, 242, 0.45) 0%, rgba(230, 236, 242, 0.8) 55%, rgba(230, 236, 242, 0.93) 100%);
+  --aurora-opacity: 0.22;
+  --aurora-blend: normal;
+
+  /* Remap the neutral palette so existing white/slate utilities read well on light surfaces */
+  --color-white: #1a2433;
+  --color-slate-200: #243245;
+  --color-slate-300: #34445a;
+  --color-slate-400: #4a5a70;
+  --color-slate-500: #5f6f84;
+  --color-slate-700: #aebccd;
+  --color-slate-800: #c4cfdb;
+  --color-slate-900: #e9eef4;
+  --color-slate-950: #f3f6f9;
+}
+
+html,
+body {
+  background-color: var(--page);
+  color: var(--text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Custom 3D Layering */
 .perspective-2000 {
   perspective: 2000px;
 }
@@ -18,44 +106,82 @@
   transform: translateZ(30px);
 }
 
+/* Mirror-glass card: frosted base, bright top edge, diagonal reflection that slides on hover */
 .glass-card {
-  background: linear-gradient(135deg, rgba(17, 34, 64, 0.5) 0%, rgba(10, 25, 47, 0.3) 100%);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-              inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  position: relative;
+  background: linear-gradient(160deg, var(--glass-top) 0%, var(--glass-bottom) 55%, var(--glass-tint) 100%);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 30%, var(--glass-sheen) 45%, transparent 60%);
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  transition: background-position 0.9s ease;
+}
+
+.glass-card:hover::before {
+  background-position: 0% 0;
+}
+
 .glass-card:hover {
-  border-color: rgba(100, 255, 218, 0.25);
-  box-shadow: 0 30px 60px rgba(0, 198, 251, 0.15),
-              inset 0 1px 2px rgba(255, 255, 255, 0.1);
+  border-color: rgba(var(--accent-rgb), 0.35);
+  box-shadow: 0 30px 60px rgba(var(--accent2-rgb), 0.18), inset 0 1px 0 var(--glass-highlight);
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  text-shadow: 0 0 20px rgba(var(--accent-rgb), 0.3);
+}
+
+/* Faded background pictures */
+.bg-gallery {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg-gallery img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--bg-img-filter);
+  transition: opacity 2s ease-in-out;
+}
+
+.bg-gallery::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg-fade);
 }
 
 /* Immersive Aurora Background Control */
 .aurora-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, #091424 0%, #070d19 100%);
 }
 
 .aurora-blob {
   position: absolute;
   filter: blur(150px);
-  mix-blend-mode: plus-lighter;
-  opacity: 0.35;
+  mix-blend-mode: var(--aurora-blend);
+  opacity: var(--aurora-opacity);
   animation: floatingEngine 16s infinite alternate ease-in-out;
 }
 
@@ -74,18 +200,27 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob {
+    animation: none;
+  }
+  .bg-gallery img,
+  .glass-card::before {
+    transition: none;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #070d19;
+  background: var(--page-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #112240;
+  background: var(--surface);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00c6fb, #64ffda);
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
 }

@@ -4,6 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <title>Sumaira Akbar | Full Stack Developer</title>
     <meta name="description" content="Sumaira Akbar - Full Stack Developer building and deploying ERP systems and web applications with React, Node.js, Express, MySQL, REST APIs, Linux (Ubuntu) servers, domain/DNS configuration, and AI/ML." />
     <meta name="keywords" content="Full Stack Developer, MERN, React, Node.js, Express.js, JavaScript, Python, MySQL, REST API, ERP Development, Linux, Ubuntu, VPS, Nginx, Deployment, DNS, Domain Configuration, SSL, Git, AI, Machine Learning, NLP" />

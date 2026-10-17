@@ -9,10 +9,10 @@ function Contact() {
         
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-[#64ffda] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
             Get In Touch
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#00c6fb] to-[#64ffda] rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent2 to-accent rounded-full" />
         </div>
 
         <div className="grid md:grid-cols-12 gap-8 items-start">
@@ -24,12 +24,12 @@ function Contact() {
               style={{ transformStyle: "preserve-3d" }}
               className="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/5"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#00c6fb]/10 flex items-center justify-center text-[#00c6fb] text-xl shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-accent2/10 flex items-center justify-center text-accent2 text-xl shrink-0">
                 <FiMail />
               </div>
               <div>
                 <p className="text-xs text-slate-400 font-mono">Email Address</p>
-                <a href="mailto:sumaira8366@gmail.com" className="text-sm font-semibold text-white hover:text-[#64ffda] transition-colors">
+                <a href="mailto:sumaira8366@gmail.com" className="text-sm font-semibold text-white hover:text-accent transition-colors">
                   sumaira8366@gmail.com
                 </a>
               </div>
@@ -40,12 +40,12 @@ function Contact() {
               style={{ transformStyle: "preserve-3d" }}
               className="glass-card p-6 rounded-2xl flex items-center gap-4 border border-white/5"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#64ffda]/10 flex items-center justify-center text-[#64ffda] text-xl shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent text-xl shrink-0">
                 <FiMapPin />
               </div>
               <div>
                 <p className="text-xs text-slate-400 font-mono">Location Base</p>
-                <p className="text-sm font-semibold text-white">Wah Cantt, Pakistan</p>
+                <p className="text-sm font-semibold text-white">Qayumabad B Area, Karachi, Pakistan</p>
               </div>
             </motion.div>
 
@@ -54,7 +54,7 @@ function Contact() {
                 href="https://github.com/sumairaakbar8366" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-2 text-sm font-medium text-slate-300 hover:text-[#64ffda]"
+                className="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-2 text-sm font-medium text-slate-300 hover:text-accent"
               >
                 <FiGithub /> GitHub
               </a>
@@ -62,7 +62,7 @@ function Contact() {
                 href="https://www.linkedin.com/in/sumaira-akbar-795110253/" 
                 target="_blank" 
                 rel="noreferrer" 
-                className="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-2 text-sm font-medium text-slate-300 hover:text-[#00c6fb]"
+                className="flex-1 glass-card p-4 rounded-xl flex items-center justify-center gap-2 text-sm font-medium text-slate-300 hover:text-accent2"
               >
                 <FiLinkedin /> LinkedIn
               </a>
@@ -84,7 +84,7 @@ function Contact() {
                   <input 
                     type="text" 
                     placeholder="John Doe" 
-                    className="w-full bg-slate-900/50 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#64ffda] transition-colors"
+                    className="w-full bg-slate-900/50 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition-colors"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -92,7 +92,7 @@ function Contact() {
                   <input 
                     type="email" 
                     placeholder="john@example.com" 
-                    className="w-full bg-slate-900/50 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#64ffda] transition-colors"
+                    className="w-full bg-slate-900/50 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition-colors"
                   />
                 </div>
               </div>
@@ -102,13 +102,13 @@ function Contact() {
                 <textarea 
                   rows="4" 
                   placeholder="Type your message here..." 
-                  className="w-full bg-slate-900/50 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#64ffda] transition-colors resize-none"
+                  className="w-full bg-slate-900/50 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent transition-colors resize-none"
                 />
               </div>
 
               <button 
                 type="submit" 
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-[#00c6fb] to-[#64ffda] text-[#070d19] font-bold text-sm shadow-[0_4px_20px_rgba(100,255,218,0.2)] hover:shadow-[0_6px_25px_rgba(100,255,218,0.4)] transition-all duration-300"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-accent2 to-accent text-on-accent font-bold text-sm shadow-[0_4px_20px_rgba(var(--accent-rgb),0.2)] hover:shadow-[0_6px_25px_rgba(var(--accent-rgb),0.4)] transition-all duration-300"
               >
                 Send Secure Message
               </button>

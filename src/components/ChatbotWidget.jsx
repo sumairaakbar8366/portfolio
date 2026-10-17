@@ -77,39 +77,39 @@ function ChatbotWidget() {
           className="flex items-center gap-3 cursor-pointer group select-none relative mr-2 transition-transform duration-300 hover:scale-105"
         >
           {/* Cute Speech Bubble Message */}
-          <div className="bg-slate-900 text-white border border-[#64ffda]/30 px-3 py-2 rounded-xl shadow-lg text-xs font-mono whitespace-nowrap animate-bounce">
-            <span className="text-[#64ffda] font-bold">Need help?</span> Ask me!
+          <div className="bg-slate-900 text-white border border-accent/30 px-3 py-2 rounded-xl shadow-lg text-xs font-mono whitespace-nowrap animate-bounce">
+            <span className="text-accent font-bold">Need help?</span> Ask me!
           </div>
 
           {/* The Cute Metallic Robot Body Head */}
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 border-2 border-[#64ffda]/40 flex flex-col items-center justify-center shadow-[0_0_20px_rgba(100,255,218,0.2)] hover:border-[#64ffda] transition-all relative overflow-hidden">
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 border-2 border-accent/40 flex flex-col items-center justify-center shadow-[0_0_20px_rgba(var(--accent-rgb),0.2)] hover:border-accent transition-all relative overflow-hidden">
             {/* Cute Robot Antenna */}
-            <div className="w-1 h-2 bg-[#64ffda] rounded-t animate-pulse absolute top-0" />
+            <div className="w-1 h-2 bg-accent rounded-t animate-pulse absolute top-0" />
             
             {/* Cute Digital Eyes Panel */}
             <div className="flex gap-2 mt-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#64ffda] shadow-[0_0_8px_#64ffda]" />
-              <span className="w-2.5 h-2.5 rounded-full bg-[#64ffda] shadow-[0_0_8px_#64ffda]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_8px_var(--accent)]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_8px_var(--accent)]" />
             </div>
             
             {/* Cute Robot Mouth Grid Line */}
-            <div className="w-6 h-0.5 bg-slate-700 rounded mt-3 group-hover:bg-[#64ffda] transition-colors" />
+            <div className="w-6 h-0.5 bg-slate-700 rounded mt-3 group-hover:bg-accent transition-colors" />
           </div>
         </div>
       )}
 
       {/* 2. CHAT CONSOLE INTERFACE MODULE */}
       {isOpen && (
-        <div className="w-[330px] sm:w-[360px] h-[450px] bg-[#070d19] rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+        <div className="w-[330px] sm:w-[360px] h-[450px] bg-page rounded-2xl border border-white/10 shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
           {/* Console Header */}
           <div className="p-4 bg-slate-950 flex items-center justify-between border-b border-white/5">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#00c6fb] to-[#64ffda] flex items-center justify-center text-slate-950 shadow-[0_0_12px_rgba(100,255,218,0.3)]">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent2 to-accent flex items-center justify-center text-on-accent shadow-[0_0_12px_rgba(var(--accent-rgb),0.3)]">
                 <FiCpu size={14} />
               </div>
               <div>
                 <h4 className="text-xs font-bold text-white tracking-tight uppercase">AI Assistant</h4>
-                <span className="text-[10px] font-mono text-[#64ffda] block">Active Matrix</span>
+                <span className="text-[10px] font-mono text-accent block">Active Matrix</span>
               </div>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-slate-400 hover:text-white transition-colors">
@@ -123,7 +123,7 @@ function ChatbotWidget() {
               <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-3 rounded-xl leading-relaxed ${
                   msg.sender === 'user'
-                    ? 'bg-gradient-to-r from-[#00c6fb] to-[#005bea] text-white rounded-tr-none'
+                    ? 'bg-gradient-to-r from-accent2 to-accent text-on-accent rounded-tr-none'
                     : 'bg-slate-950 border border-white/5 text-slate-300 rounded-tl-none'
                 }`}>
                   {msg.text}
@@ -140,9 +140,9 @@ function ChatbotWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask to see certificates, current job..."
-              className="flex-1 bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-[#64ffda]/40"
+              className="flex-1 bg-slate-900 border border-white/10 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-accent/40"
             />
-            <button type="submit" className="w-9 h-9 rounded-xl bg-gradient-to-r from-[#00c6fb] to-[#64ffda] text-slate-950 flex items-center justify-center font-bold shadow-md hover:scale-105 transition-all">
+            <button type="submit" className="w-9 h-9 rounded-xl bg-gradient-to-r from-accent2 to-accent text-on-accent flex items-center justify-center font-bold shadow-md hover:scale-105 transition-all">
               <FiSend size={14} />
             </button>
           </form>

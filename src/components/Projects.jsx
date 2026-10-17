@@ -63,20 +63,20 @@ function Projects() {
       role: "Developer",
       desc: "Engineered an explicit automation script environment integrating Google Apps Script web forms with standard relational MySQL databases to securely handle remote CRUD data transactions.",
       tech: ["Google Apps Script", "MySQL DB", "JavaScript", "Data Automation"],
-      customIcon: <FiDatabase className="text-[#00c6fb]" />
+      customIcon: <FiDatabase className="text-accent2" />
     }
   ];
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-[#030712]">
+    <section id="projects" className="py-24 relative overflow-hidden bg-page-deep/60">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-3 bg-gradient-to-r from-white via-slate-200 to-[#64ffda] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-3 bg-gradient-to-r from-white via-slate-200 to-accent bg-clip-text text-transparent">
             Featured Masterpieces
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00c6fb] to-[#64ffda] rounded-full" />
+          <div className="w-24 h-1 bg-gradient-to-r from-accent2 to-accent rounded-full" />
         </div>
 
         {/* ========================================================================= */}
@@ -91,11 +91,11 @@ function Projects() {
         >
           <div className="space-y-6 lg:col-span-6">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center text-xl shadow-[0_4px_12px_rgba(100,255,218,0.1)]">
-                <FiCpu className="text-[#64ffda]" />
+              <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center text-xl shadow-[0_4px_12px_rgba(var(--accent-rgb),0.1)]">
+                <FiCpu className="text-accent" />
               </div>
               <div>
-                <span className="text-xs font-mono text-[#64ffda] tracking-wider block uppercase">Featured AI Desktop Framework</span>
+                <span className="text-xs font-mono text-accent tracking-wider block uppercase">Featured AI Desktop Framework</span>
                 <h3 className="text-3xl font-black text-white tracking-tight">DESKBOT SKY</h3>
               </div>
             </div>
@@ -104,12 +104,12 @@ function Projects() {
             </p>
             <div className="space-y-3">
               <h4 className="text-xs font-mono font-bold text-slate-300 tracking-wider uppercase flex items-center gap-2">
-                <FiTerminal className="text-[#00c6fb]" /> Technical Capabilities
+                <FiTerminal className="text-accent2" /> Technical Capabilities
               </h4>
               <ul className="space-y-2.5">
                 {deskbotFeatures.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-400 leading-normal">
-                    <FiCheckCircle className="text-[#64ffda] shrink-0 mt-0.5" />
+                    <FiCheckCircle className="text-accent shrink-0 mt-0.5" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -122,7 +122,7 @@ function Projects() {
             </div>
           </div>
           <div className="lg:col-span-6">
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,198,251,0.15)] bg-slate-950 aspect-video">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(var(--accent2-rgb),0.15)] bg-slate-950 aspect-video">
               <video src="/deskbotteaser.mp4" controls autoPlay muted loop playsInline className="w-full h-full object-cover" />
             </div>
           </div>
@@ -141,7 +141,7 @@ function Projects() {
         >
           {/* Swiper Visual Showcase on Large Grid Left */}
           <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col items-center">
-            <div className="relative w-full max-w-[290px] aspect-[9/16] bg-slate-950 rounded-[40px] p-3 border-4 border-slate-800 shadow-[0_25px_60px_-15px_rgba(100,255,218,0.2)] overflow-hidden group">
+            <div className="relative w-full max-w-[290px] aspect-[9/16] bg-slate-950 rounded-[40px] p-3 border-4 border-slate-800 shadow-[0_25px_60px_-15px_rgba(var(--accent-rgb),0.2)] overflow-hidden group">
               
               {/* Image Presenter with AnimatePresence */}
               <div className="w-full h-full rounded-[32px] overflow-hidden bg-slate-900 relative">
@@ -176,7 +176,7 @@ function Projects() {
 
             {/* Pagination Caption Bar */}
             <div className="mt-4 text-center space-y-1.5">
-              <p className="text-xs font-mono text-[#64ffda] tracking-wide">
+              <p className="text-xs font-mono text-accent tracking-wide">
                 {reactNativeScreens[currentSlide].label}
               </p>
               <div className="flex gap-1 justify-center items-center">
@@ -184,7 +184,7 @@ function Projects() {
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-5 bg-[#64ffda]' : 'w-1.5 bg-slate-700'}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-5 bg-accent' : 'w-1.5 bg-slate-700'}`}
                   />
                 ))}
               </div>
@@ -194,11 +194,11 @@ function Projects() {
           {/* Core Technical Blueprint Description right */}
           <div className="space-y-6 lg:col-span-7 order-1 lg:order-2">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center text-xl shadow-[0_4px_12px_rgba(0,198,251,0.1)]">
-                <FiCode className="text-[#00c6fb]" />
+              <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-center text-xl shadow-[0_4px_12px_rgba(var(--accent2-rgb),0.1)]">
+                <FiCode className="text-accent2" />
               </div>
               <div>
-                <span className="text-xs font-mono text-[#00c6fb] tracking-wider block uppercase">Interactive Mobile Portal Environment</span>
+                <span className="text-xs font-mono text-accent2 tracking-wider block uppercase">Interactive Mobile Portal Environment</span>
                 <h3 className="text-3xl font-black text-white tracking-tight">React Native Enterprise UI Portal</h3>
               </div>
             </div>
@@ -209,12 +209,12 @@ function Projects() {
 
             <div className="space-y-3">
               <h4 className="text-xs font-mono font-bold text-slate-300 tracking-wider uppercase flex items-center gap-2">
-                <FiTerminal className="text-[#64ffda]" /> Structural Specifications
+                <FiTerminal className="text-accent" /> Structural Specifications
               </h4>
               <ul className="space-y-2.5">
                 {appFeatures.map((feat, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-400 leading-normal">
-                    <FiCheckCircle className="text-[#00c6fb] shrink-0 mt-0.5" />
+                    <FiCheckCircle className="text-accent2 shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -252,11 +252,11 @@ function Projects() {
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {secondaryProjects.map((proj, idx) => (
-              <div key={idx} className="glass-card p-6 rounded-2xl border border-white/5 bg-[#070d19]/20 flex flex-col justify-between">
+              <div key={idx} className="glass-card p-6 rounded-2xl border border-white/5 bg-page/20 flex flex-col justify-between">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between text-slate-400">
                     <div className="w-9 h-9 rounded-lg bg-slate-900/60 border border-white/5 flex items-center justify-center text-lg">{proj.customIcon}</div>
-                    <span className="text-[10px] font-mono text-[#64ffda] bg-[#64ffda]/5 px-2 py-0.5 rounded-full border border-[#64ffda]/10">{proj.role}</span>
+                    <span className="text-[10px] font-mono text-accent bg-accent/5 px-2 py-0.5 rounded-full border border-accent/10">{proj.role}</span>
                   </div>
                   <h4 className="text-sm font-bold text-white tracking-tight">{proj.title}</h4>
                   <p className="text-xs text-slate-400 leading-relaxed line-clamp-3">{proj.desc}</p>

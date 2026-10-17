@@ -45,7 +45,7 @@ const skillCategories = [
       { 
         name: "Machine Learning", 
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12A10 10 0 0 1 12 2z" />
             <path d="M12 6v12M6 12h12" />
           </svg>
@@ -54,7 +54,7 @@ const skillCategories = [
       { 
         name: "NLP", 
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#00c6fb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent-2)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 6h16M4 12h16M4 18h12" />
           </svg>
         ) 
@@ -62,7 +62,7 @@ const skillCategories = [
       { 
         name: "Speech Recognition", 
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
             <path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M4 22h16" />
           </svg>
@@ -71,7 +71,7 @@ const skillCategories = [
       { 
         name: "Desktop Automation", 
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#00c6fb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent-2)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
             <line x1="8" y1="21" x2="16" y2="21" />
             <line x1="12" y1="17" x2="12" y2="21" />
@@ -81,7 +81,7 @@ const skillCategories = [
       { 
         name: "Ollama", 
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--text-strong)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
           </svg>
         ) 
@@ -154,7 +154,7 @@ const skillCategories = [
       {
         name: "RESTful APIs",
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
           </svg>
         )
@@ -162,7 +162,7 @@ const skillCategories = [
       {
         name: "ERP Development",
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#00c6fb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent-2)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="3" width="7" height="7" />
             <rect x="14" y="3" width="7" height="7" />
             <rect x="14" y="14" width="7" height="7" />
@@ -195,7 +195,7 @@ const skillCategories = [
       {
         name: "VM / VPS Hosting",
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#00c6fb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent-2)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
             <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
             <line x1="6" y1="6" x2="6.01" y2="6" />
@@ -206,7 +206,7 @@ const skillCategories = [
       {
         name: "Domain & DNS",
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="12" cy="12" r="10" />
             <line x1="2" y1="12" x2="22" y2="12" />
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -225,7 +225,7 @@ const skillCategories = [
       {
         name: "SSL / HTTPS",
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#64ffda" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
             <path d="M7 11V7a5 5 0 0 1 10 0v4" />
           </svg>
@@ -234,7 +234,7 @@ const skillCategories = [
       {
         name: "CI/CD & Deployment",
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#00c6fb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--accent-2)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
           </svg>
         )
@@ -247,7 +247,7 @@ const skillCategories = [
       { 
         name: "Git & GitHub", 
         icon: (
-          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" style={{ stroke: 'var(--text-strong)' }} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
           </svg>
         ) 
@@ -288,10 +288,10 @@ function Skills() {
         
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-[#64ffda] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
             Technical Arsenal
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#00c6fb] to-[#64ffda] rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent2 to-accent rounded-full" />
         </div>
 
         {/* Skill Clusters Grid */}
@@ -301,7 +301,7 @@ function Skills() {
               key={catIdx}
               className="glass-card p-6 rounded-2xl relative group overflow-hidden"
             >
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-[#00c6fb]/30 to-transparent" />
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-accent2/30 to-transparent" />
               <h3 className="text-lg font-bold text-white mb-6 tracking-wide border-b border-white/5 pb-2">
                 {category.title}
               </h3>
@@ -311,7 +311,7 @@ function Skills() {
                   <motion.div
                     key={skIdx}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="p-3.5 rounded-xl bg-slate-900/40 border border-white/5 flex flex-col items-center justify-center text-center gap-2 hover:border-[#64ffda]/20 transition-all duration-200 group/item"
+                    className="p-3.5 rounded-xl bg-slate-900/40 border border-white/5 flex flex-col items-center justify-center text-center gap-2 hover:border-accent/20 transition-all duration-200 group/item"
                   >
                     <div className="filter drop-shadow-[0_0_8px_rgba(255,255,255,0.05)] group-hover/item:scale-110 transition-transform duration-200">
                       {skill.icon}
@@ -335,7 +335,7 @@ function Skills() {
             {coreCompetencies.map((keyword) => (
               <span
                 key={keyword}
-                className="px-3 py-1.5 rounded-full text-xs font-medium text-slate-300 bg-slate-900/40 border border-white/5 hover:border-[#64ffda]/30 hover:text-[#64ffda] transition-colors duration-200"
+                className="px-3 py-1.5 rounded-full text-xs font-medium text-slate-300 bg-slate-900/40 border border-white/5 hover:border-accent/30 hover:text-accent transition-colors duration-200"
               >
                 {keyword}
               </span>

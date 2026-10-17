@@ -13,9 +13,9 @@ function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-sm font-mono text-[#64ffda] tracking-widest uppercase"
+          className="text-sm font-mono text-accent tracking-widest uppercase"
         >
-           SALUTATIONS, ALLOW ME TO INTRODUCE MYSELF
+           WELCOME TO THE DIGITAL DOMAIN OF
         </motion.p>
 
         <motion.h1 
@@ -57,7 +57,7 @@ function Hero() {
           <a 
             href="/resume.pdf" 
             download="Sumaira_Akbar_Resume.pdf"
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c6fb] to-[#64ffda] text-[#070d19] font-bold text-sm shadow-[0_4px_20px_rgba(100,255,218,0.3)] hover:shadow-[0_6px_25px_rgba(100,255,218,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-accent2 to-accent text-on-accent font-bold text-sm shadow-[0_4px_20px_rgba(var(--accent-rgb),0.3)] hover:shadow-[0_6px_25px_rgba(var(--accent-rgb),0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer"
           >
             <FiDownload /> Download Resume
           </a>

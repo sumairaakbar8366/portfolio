@@ -9,7 +9,7 @@ const certificates = [
     status: "Certified",
     fileLink: "/internship.pdf", 
     desc: "Official certification validating hands-on development, code debugging, and software systems lifecycle experience.",
-    icon: <FiCheckCircle className="text-[#64ffda]" />
+    icon: <FiCheckCircle className="text-accent" />
   },
   {
     title: "Introduction to API Testing with Postman",
@@ -25,7 +25,7 @@ const certificates = [
     status: "Certified",
     fileLink: "/apitestingjmeter.pdf",
     desc: "Studied performance evaluation matrices and asynchronous load-balancing script profiles via functional frameworks.",
-    icon: <FiAward className="text-[#00c6fb]" />
+    icon: <FiAward className="text-accent2" />
   },
   {
     title: "System Administration and IT Infrastructure",
@@ -33,7 +33,7 @@ const certificates = [
     status: "Certified",
     fileLink: "/navttccertificate.pdf",
     desc: "Completed comprehensive training covering network scaling, virtualization frameworks, and core server systems.",
-    icon: <FiCheckCircle className="text-[#64ffda]" />
+    icon: <FiCheckCircle className="text-accent" />
   },
 
   {
@@ -42,7 +42,7 @@ const certificates = [
   status: "Certified",
   fileLink: "/pofcertificate.pdf", 
   desc: "Completed hands-on internship focusing on intent evaluation models, workflow execution frameworks, and automated process systems.",
-  icon: <FiCheckCircle className="text-[#64ffda]" />
+  icon: <FiCheckCircle className="text-accent" />
 }
 
 ];
@@ -52,10 +52,10 @@ function Certificates() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-[#64ffda] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
             Credentials & Certifications
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#00c6fb] to-[#64ffda] rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent2 to-accent rounded-full" />
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
@@ -63,10 +63,8 @@ function Certificates() {
             <motion.div
               key={idx}
               whileHover={{ 
-                scale: 1.02,
-                rotateX: 2,
-                rotateY: -2,
-                boxShadow: "0 25px 50px rgba(0, 198, 251, 0.15)"
+                scale: 1.01,
+                boxShadow: "0 25px 50px rgba(114, 144, 179, 0.22)"
               }}
               style={{ transformStyle: "preserve-3d" }}
               className="glass-card p-6 rounded-2xl border border-white/5 relative flex flex-col justify-between group preserve-3d"
@@ -81,22 +79,12 @@ function Certificates() {
                     <span className={`inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
                       cert.status === 'Coming Soon'
                         ? 'bg-amber-500/10 text-amber-400 border border-amber-500/20'
-                        : 'bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/20'
+                        : 'bg-accent/10 text-accent border border-accent/20'
                     }`}>
                       {cert.status}
                     </span>
-                    {cert.fileLink && (
-                      <a 
-                        href={cert.fileLink} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="text-slate-400 hover:text-[#64ffda] text-sm flex items-center gap-1 font-mono text-[11px]"
-                      >
-                        View <FiExternalLink />
-                      </a>
-                    )}
                   </div>
-                  <h3 className="text-base font-bold text-white leading-snug group-hover:text-[#64ffda] transition-colors duration-200">
+                  <h3 className="text-base font-bold text-white leading-snug group-hover:text-accent transition-colors duration-200">
                     {cert.title}
                   </h3>
                   <p className="text-xs text-slate-400 font-medium">{cert.issuer}</p>
@@ -106,6 +94,17 @@ function Certificates() {
               <p className="text-slate-400 text-xs leading-relaxed mt-4 pt-3 border-t border-white/5">
                 {cert.desc}
               </p>
+
+              {cert.fileLink && (
+                <a
+                  href={cert.fileLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative z-10 mt-4 self-start inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-accent2 to-accent text-on-accent text-sm font-semibold shadow-[0_4px_16px_rgba(var(--accent-rgb),0.25)] hover:shadow-[0_6px_22px_rgba(var(--accent-rgb),0.4)] transition-shadow duration-200 cursor-pointer"
+                >
+                  View Certificate <FiExternalLink />
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

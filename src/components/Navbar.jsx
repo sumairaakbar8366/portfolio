@@ -3,6 +3,38 @@ import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { SiCentos } from 'react-icons/si';
+import { FiSun, FiMoon } from 'react-icons/fi';
+
+function useTheme() {
+  const [theme, setTheme] = useState(
+    () => document.documentElement.getAttribute('data-theme') || 'dark'
+  );
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {
+      // Storage unavailable (private mode); theme still applies for this visit
+    }
+  }, [theme]);
+
+  return [theme, () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))];
+}
+
+function ThemeToggle({ theme, onToggle }) {
+  const isDark = theme === 'dark';
+  return (
+    <button
+      onClick={onToggle}
+      aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+      title={isDark ? 'Light mode' : 'Dark mode'}
+      className="glass-card w-10 h-10 rounded-full flex items-center justify-center text-accent text-lg hover:scale-105 cursor-pointer"
+    >
+      {isDark ? <FiSun /> : <FiMoon />}
+    </button>
+  );
+}
 
 const navItems = [
   { name: 'Home', to: 'home' },
@@ -17,6 +49,7 @@ const navItems = [
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, toggleTheme] = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,17 +70,17 @@ function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'py-4 bg-[#070d19]/70 backdrop-blur-md border-b border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]' 
+          ? 'py-4 bg-page/70 backdrop-blur-md border-b border-white/5 shadow-[0_10px_30px_rgba(0,0,0,0.4)]' 
           : 'py-6 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Futuristic 3D Logo */}
         <Link to="home" smooth={true} duration={500} className="cursor-pointer group flex items-center gap-2">
-          <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-[#00c6fb] to-[#64ffda] shadow-[0_0_15px_rgba(100,255,218,0.4)] transform group-hover:rotate-12 transition-transform duration-300">
-            <SiCentos className="text-[#070d19] text-2xl animate-pulse" />
+          <div className="relative w-10 h-10 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent2 to-accent shadow-[0_0_15px_rgba(var(--accent-rgb),0.4)] transform group-hover:rotate-12 transition-transform duration-300">
+            <SiCentos className="text-on-accent text-2xl animate-pulse" />
           </div>
-          <span className="text-xl font-bold tracking-wider bg-gradient-to-r from-white via-[#e2e8f0] to-[#64ffda] bg-clip-text text-transparent">
+          <span className="text-xl font-bold tracking-wider bg-gradient-to-r from-white via-slate-200 to-accent bg-clip-text text-transparent">
             SA
           </span>
         </Link>
@@ -62,7 +95,7 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={600}
-              activeClass="text-[#64ffda] bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
+              activeClass="text-accent bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]"
               className="px-4 py-1.5 rounded-full text-sm font-medium text-slate-400 hover:text-white transition-all duration-200 cursor-pointer"
             >
               {item.name}
@@ -71,20 +104,22 @@ function Navbar() {
         </nav>
 
         {/* Call to Action Layer */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
           <Link to="contact" smooth={true} duration={600} offset={-70}>
-            <button className="relative px-5 py-2 overflow-hidden rounded-full group bg-transparent border border-[#64ffda]/30 text-sm font-semibold text-[#64ffda] shadow-[0_0_15px_rgba(100,255,218,0.1)] transition-all hover:shadow-[0_0_25px_rgba(100,255,218,0.3)]">
-              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[#00c6fb] to-[#64ffda] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              <span className="group-hover:text-[#070d19] transition-colors duration-300">Let's Connect</span>
+            <button className="relative px-5 py-2 overflow-hidden rounded-full group bg-transparent border border-accent/30 text-sm font-semibold text-accent shadow-[0_0_15px_rgba(var(--accent-rgb),0.1)] transition-all hover:shadow-[0_0_25px_rgba(var(--accent-rgb),0.3)]">
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-accent2 to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
+              <span className="group-hover:text-on-accent transition-colors duration-300">Let's Connect</span>
             </button>
           </Link>
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-3">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-2xl text-[#64ffda] focus:outline-none p-1"
+            className="text-2xl text-accent focus:outline-none p-1"
           >
             {isOpen ? <HiX /> : <HiMenuAlt3 />}
           </button>
@@ -99,7 +134,7 @@ function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden border-b border-white/5 bg-[#070d19]/95 backdrop-blur-xl"
+            className="md:hidden border-b border-white/5 bg-page/95 backdrop-blur-xl"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
               {navItems.map((item) => (
@@ -110,7 +145,7 @@ function Navbar() {
                   smooth={true}
                   offset={-70}
                   duration={600}
-                  activeClass="text-[#64ffda] pl-4 border-l-2 border-[#64ffda]"
+                  activeClass="text-accent pl-4 border-l-2 border-accent"
                   onClick={() => setIsOpen(false)}
                   className="text-lg font-medium text-slate-300 hover:text-white py-1 transition-all cursor-pointer"
                 >

@@ -14,7 +14,7 @@ const experiences = [
       "Deploying and maintaining applications on Linux (Ubuntu) VMs/VPS with Nginx, PM2, domain & DNS configuration, and SSL/HTTPS certificates.",
       "Handling database administration, backups, performance tuning, and production troubleshooting across the full software development life cycle (SDLC)."
     ],
-    color: "from-[#64ffda] to-[#00c6fb]"
+    color: "from-accent to-accent2"
   },
   {
     role: "AI Intern",
@@ -25,7 +25,7 @@ const experiences = [
       "Developed, executed, and trained deep algorithmic systems focused on desktop workflows and automated pipelines.",
     "Worked on execution tasks, intent evaluation, and standalone automation frameworks."
     ],
-    color: "from-[#64ffda] to-[#00c6fb]"
+    color: "from-accent to-accent2"
   },
   {
     role: "Full Stack Developer (Contract Based)",
@@ -37,7 +37,7 @@ const experiences = [
       "Maintained intact runtime frontend architecture dependencies while successfully rerouting underlying API networks to point to the newly implemented production SQL backend layer.",
       "Optimized query efficiency, normalized tables, and enhanced asynchronous communication lines across modules."
     ],
-    color: "from-[#00c6fb] to-[#112240]"
+    color: "from-accent2 to-surface"
   },
   {
     role: "Programmer Intern",
@@ -49,7 +49,7 @@ const experiences = [
       "Gained robust hands-on programming experience and deepened practical implementation skills across codebase architectures[cite: 1].",
       "Participated actively in testing and troubleshooting systems to identify layout bugs and data-flow constraints[cite: 1]."
     ],
-    color: "from-[#112240] to-transparent"
+    color: "from-surface to-transparent"
   }
 ];
 
@@ -60,10 +60,10 @@ function Experience() {
         
         {/* Section Heading */}
         <div className="flex flex-col items-center text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-[#64ffda] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-2 bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
             Professional Experience
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#00c6fb] to-[#64ffda] rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-accent2 to-accent rounded-full" />
         </div>
 
         {/* Timeline Dynamic Stack */}
@@ -78,7 +78,7 @@ function Experience() {
               className="relative pl-8 sm:pl-12 group"
             >
               {/* Glowing Interactive Timeline Node Connector */}
-              <div className="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-[#070d19] border-2 border-[#64ffda] shadow-[0_0_15px_rgba(100,255,218,0.8)] group-hover:scale-125 transition-transform duration-300 flex items-center justify-center" />
+              <div className="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-page border-2 border-accent shadow-[0_0_15px_rgba(var(--accent-rgb),0.8)] group-hover:scale-125 transition-transform duration-300 flex items-center justify-center" />
 
               {/* Float Card Structure */}
               <div className="glass-card p-8 rounded-2xl relative transition-all duration-300 hover:-translate-y-1">
@@ -86,11 +86,11 @@ function Experience() {
 
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-[#64ffda] transition-colors duration-200">
+                    <h3 className="text-xl font-bold text-white tracking-wide group-hover:text-accent transition-colors duration-200">
                       {exp.role}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-slate-300 font-semibold mt-1">
-                      <FiBriefcase className="text-[#00c6fb]" />
+                      <FiBriefcase className="text-accent2" />
                       <span>{exp.company}</span>
                     </div>
                   </div>
@@ -110,7 +110,7 @@ function Experience() {
                 <ul className="space-y-2.5 text-slate-400 text-sm leading-relaxed">
                   {exp.description.map((bullet, bIdx) => (
                     <li key={bIdx} className="flex items-start gap-2.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#64ffda] mt-2 shrink-0" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                       <span>{bullet}</span>
                     </li>
                   ))}
